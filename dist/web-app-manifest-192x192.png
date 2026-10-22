@@ -1,0 +1,131 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ReStructure AI Brand Resources</title>
+<meta name="description" content="Brand guidelines and press kit for ReStructure AI: logo, symbol, colors, typography and usage rules.">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#111111">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&family=Newsreader:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Roboto,Arial,sans-serif;color:#111;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.nav{display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:28px 32px}
+.nav img{height:30px;display:block}.nav a.t{font-size:14px;text-decoration:none;color:#555}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.hero{padding:72px 32px 56px}
+.eyebrow{font-family:"Roboto Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#777;margin-bottom:20px}
+h1{font-size:clamp(44px,7vw,88px);font-weight:500;line-height:1.02;letter-spacing:-.03em;max-width:900px}
+h1 span{font-weight:300}
+.lead{font-size:19px;color:#444;max-width:680px;margin-top:28px;font-weight:300}
+section{padding:72px 0;border-top:1px solid #e8e8e8}
+h2{font-size:40px;font-weight:500;letter-spacing:-.02em;line-height:1.1;margin-bottom:20px}
+h3{font-size:22px;font-weight:500;margin:44px 0 12px}
+p.b{font-size:17px;color:#444;max-width:640px;font-weight:300}
+.stage{border-radius:20px;display:flex;align-items:center;justify-content:center;min-height:300px;margin:32px 0;position:relative;overflow:hidden}
+.stage.l{background:#f5f5f5}.stage.d{background:#111}
+.stage img{max-width:62%;max-height:140px}
+.cap{font-size:13px;color:#777;font-family:"Roboto Mono",monospace;margin-top:-16px}
+ul.dl{list-style:none;margin-top:24px;max-width:640px}
+ul.dl li a{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #e8e8e8;text-decoration:none;font-size:15px}
+ul.dl li a:hover{background:#fafafa}
+ul.dl li span{color:#888;font-family:"Roboto Mono",monospace;font-size:13px}
+ul.dl li.all a{font-weight:500}
+.clear{background:#f5f5f5;border-radius:20px;min-height:340px;display:flex;align-items:center;justify-content:center;margin:32px 0}
+.clear .box{position:relative;padding:72px;border:1px dashed #999;background:#fff}
+.clear .box img{height:72px;display:block}
+.clear .box i{position:absolute;font-family:"Roboto Mono",monospace;font-size:11px;color:#999;font-style:normal}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0}
+.av{aspect-ratio:1;background:#f5f5f5;border-radius:20px;display:flex;align-items:center;justify-content:center}.av img{width:42%}
+.constr{display:flex;align-items:center;justify-content:center;background:#f5f5f5;border-radius:20px;min-height:340px;margin:32px 0}
+.constr .h{width:216px;height:216px;border:1px dashed #999;display:flex;align-items:center;justify-content:center;background:#fff}.constr .h img{width:72px}
+.avoid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:28px}
+.avoid div{border:1px solid #e8e8e8;border-radius:14px;padding:16px 18px;font-size:16px}
+.avoid b{display:block;font-family:"Roboto Mono",monospace;font-size:11px;color:#c0392b;font-weight:500;letter-spacing:.06em;margin-bottom:4px}
+.pal{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-radius:20px;overflow:hidden;margin:28px 0;border:1px solid #e8e8e8}
+.pal div{padding:90px 16px 16px;font-size:13px}.pal b{display:block;font-weight:500;font-size:14px}.pal span{font-family:"Roboto Mono",monospace;font-size:12px;opacity:.8}
+.do{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:640px;margin-top:20px}
+.do h4{font-family:"Roboto Mono",monospace;font-size:12px;letter-spacing:.08em;margin-bottom:8px;font-weight:500}
+.do ul{list-style:none;font-size:16px}.do li{padding:6px 0;border-bottom:1px solid #eee}
+.g{color:#1a7f37}.r{color:#c0392b}
+.type{border:1px solid #e8e8e8;border-radius:20px;padding:36px;margin:20px 0}
+.type .big{font-size:72px;line-height:1.05;letter-spacing:-.02em}
+.type small{font-family:"Roboto Mono",monospace;font-size:12px;color:#777;display:block;margin-bottom:12px}
+footer{padding:56px 0;border-top:1px solid #e8e8e8;font-size:14px;color:#777}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media(max-width:700px){.row3{grid-template-columns:1fr}.do{grid-template-columns:1fr}.clear .box{padding:32px}}
+</style></head><body>
+<div class="nav"><img src="/assets/restructure-logo-black.svg" alt="ReStructure AI"><a class="t" href="https://re-structure.ai">re-structure.ai</a></div>
+<div class="wrap hero"><div class="eyebrow">ReStructure AI Official Brand Resources</div>
+<h1>Brand guidelines <span>and press kit</span></h1>
+<p class="lead">This page provides guidance and assets for the correct use of ReStructure AI trademarks and copyrighted materials. It is designed for all external entities engaging with our brand. Adherence to these guidelines is required when using ReStructure branding in third-party assets.</p></div>
+
+<section><div class="wrap"><h2>ReStructure AI Official Logo</h2>
+<div class="stage l"><img src="/assets/restructure-logo-black.svg" alt="ReStructure AI Official Logo"></div><div class="cap">ReStructure AI Official Logo</div>
+<ul class="dl">
+<li><a href="/assets/restructure-logo-black.png" download>ReStructure AI Logo black (PNG)<span>PNG</span></a></li>
+<li><a href="/assets/restructure-logo-black.svg" download>ReStructure AI Logo black (SVG)<span>SVG</span></a></li>
+<li><a href="/assets/restructure-logo-white.png" download>ReStructure AI Logo white (PNG)<span>PNG</span></a></li>
+<li><a href="/assets/restructure-logo-white.svg" download>ReStructure AI Logo white (SVG)<span>SVG</span></a></li>
+<li class="all"><a href="/assets/restructure-logo-pack.zip" download>Download all<span>ZIP</span></a></li></ul>
+<h3>Clearance</h3><p class="b">To keep visual impact, the logo needs ample, unobstructed space. All communications must keep a minimum clearance area, determined by the logo size and equal to its height.</p>
+<div class="clear"><div class="box"><i style="top:24px;left:50%;transform:translateX(-50%)">1x</i><i style="bottom:24px;left:50%;transform:translateX(-50%)">1x</i><i style="left:20px;top:50%">1x</i><i style="right:20px;top:50%">1x</i><img src="/assets/restructure-logo-black.svg" alt="ReStructure AI Official Logo minimum area of clearance"></div></div>
+<div class="cap">ReStructure AI Official Logo - minimum area of clearance</div></div></section>
+
+<section><div class="wrap"><h2>Symbol</h2>
+<p class="b">The visual shorthand for our brand is the stacked bars symbol. Three offset bars abstract a structure being rebuilt: capture, restructure, deploy. It is built from three identical rectangles on a 72 unit grid.</p>
+<div class="stage l" style="min-height:360px"><img src="/assets/restructure-symbol-black.svg" alt="ReStructure AI symbol" style="height:140px;max-width:none"></div>
+<h3>Construction</h3><p class="b">The icon is positioned centrally and surrounded by generous space. The height of the holding device equals three times the height of the icon.</p>
+<div class="constr"><div class="h"><img src="/assets/restructure-symbol-black.svg" alt="Symbol construction"></div></div>
+<h3>Avatars and apps</h3><p class="b">The symbol works best where space is limited, such as social profiles and app icons. It sits on black inside circles, rounded squares and squares.</p>
+<div class="row3"><div class="av"><img src="/assets/restructure-avatar-circle.svg" alt="Circle"></div><div class="av"><img src="/assets/restructure-avatar-rounded.svg" alt="Rounded square"></div><div class="av"><img src="/assets/restructure-avatar-square.svg" alt="Square"></div></div>
+<ul class="dl">
+<li><a href="/assets/restructure-symbol-black.png" download>ReStructure Symbol black (PNG)<span>PNG</span></a></li>
+<li><a href="/assets/restructure-symbol-black.svg" download>ReStructure Symbol black (SVG)<span>SVG</span></a></li>
+<li><a href="/assets/restructure-symbol-white.png" download>ReStructure Symbol white (PNG)<span>PNG</span></a></li>
+<li><a href="/assets/restructure-symbol-white.svg" download>ReStructure Symbol white (SVG)<span>SVG</span></a></li>
+<li class="all"><a href="/assets/restructure-symbol-pack.zip" download>Download symbol and avatar pack<span>ZIP</span></a></li></ul></div></section>
+
+<section><div class="wrap"><h2>What to avoid</h2>
+<p class="b">Write the name as ReStructure AI. The logo is never redrawn, stretched, recolored or rebuilt from other characters.</p>
+<div class="avoid">
+<div><b>DON'T</b>Re Structure AI - with a space inside Re and Structure</div>
+<div><b>DON'T</b>Restructure AI - without a capital S</div>
+<div><b>DON'T</b>restructure ai - all lowercase</div>
+<div><b>DON'T</b>RESTRUCTURE AI - all caps</div>
+<div><b>DON'T</b>ReStructure.ai - as the company name in running text</div>
+<div><b>DON'T</b>Three stacked bars rebuilt with equals signs, hyphens or other characters</div></div></div></section>
+
+<section><div class="wrap"><h2>ReStructure Platforms</h2>
+<p class="b">The ReStructure ecosystem includes ReStructure AI, ReStructure Manpower and the Reese product line. Each uses the same symbol and its own palette.</p>
+
+<h3>ReStructure AI</h3><p class="b">The company brand. Monochrome: black, white and neutral grays. Type in Roboto.</p>
+<div class="pal"><div style="background:#111;color:#fff"><b>Black</b><span>#111111</span></div><div style="background:#3b4148;color:#fff"><b>Graphite</b><span>#3B4148</span></div><div style="background:#8b929a;color:#fff"><b>Slate</b><span>#8B929A</span></div><div style="background:#f1f2f4"><b>Fog</b><span>#F1F2F4</span></div><div style="background:#fff"><b>White</b><span>#FFFFFF</span></div></div>
+<div class="do"><div><h4 class="g">DO</h4><ul><li>Black on white</li><li>White on black</li><li>Generous space</li></ul></div><div><h4 class="r">DON'T</h4><ul><li>Gradients on the logo</li><li>Off-palette colors</li><li>Drop shadows</li></ul></div></div>
+
+<h3>ReStructure Manpower</h3><p class="b">The staffing and talent platform. Deep green is the primary color, with cool blue and warm paper tones.</p>
+<div class="pal"><div style="background:#002f19;color:#fff"><b>Manpower Green</b><span>#002F19</span></div><div style="background:#4d625b;color:#fff"><b>Moss</b><span>#4D625B</span></div><div style="background:#b8cedc"><b>Mist Blue</b><span>#B8CEDC</span></div><div style="background:#c3d9e7"><b>Sky</b><span>#C3D9E7</span></div><div style="background:#faf9f7"><b>Paper</b><span>#FAF9F7</span></div></div>
+
+<h3>Reese</h3><p class="b">Product line (Manpower, Portfolio, Loan Origination). Dark, near-black surfaces with neutral accents.</p>
+<div class="pal"><div style="background:#0b0d10;color:#fff"><b>Ink</b><span>#0B0D10</span></div><div style="background:#3b4148;color:#fff"><b>Graphite</b><span>#3B4148</span></div><div style="background:#aeb4bb"><b>Steel</b><span>#AEB4BB</span></div><div style="background:#f7f8f9"><b>Cloud</b><span>#F7F8F9</span></div><div style="background:#fff"><b>White</b><span>#FFFFFF</span></div></div></div></section>
+
+<section><div class="wrap"><h2>Typography</h2>
+<p class="b">Roboto for interface and marketing. Roboto Mono for labels, numbers and code. Newsreader for contracts and all documents.</p>
+<div class="type"><small>ROBOTO - HEADLINES AND INTERFACE</small><div class="big" style="font-weight:500">We restructure careers</div></div>
+<div class="type"><small>ROBOTO MONO - LABELS AND DATA</small><div class="big" style="font-family:'Roboto Mono',monospace;font-size:48px">OPEN ROLES</div></div>
+<div class="type"><small>NEWSREADER - CONTRACTS AND DOCUMENTS</small><div class="big" style="font-family:Newsreader,Georgia,serif;font-weight:400">Placement agreement</div></div>
+<ul class="dl"><li><a href="https://fonts.google.com/specimen/Roboto" target="_blank" rel="noopener">Roboto on Google Fonts<span>LINK</span></a></li><li><a href="https://fonts.google.com/specimen/Roboto+Mono" target="_blank" rel="noopener">Roboto Mono on Google Fonts<span>LINK</span></a></li><li><a href="https://fonts.google.com/specimen/Newsreader" target="_blank" rel="noopener">Newsreader on Google Fonts<span>LINK</span></a></li></ul></div></section>
+
+<section><div class="wrap"><h2>Downloads</h2>
+<ul class="dl">
+<li><a href="/assets/restructure-logo-pack.zip" download>Logo pack - black and white, SVG and PNG<span>ZIP</span></a></li>
+<li><a href="/assets/restructure-symbol-pack.zip" download>Symbol and avatar pack - SVG and PNG<span>ZIP</span></a></li>
+<li class="all"><a href="/assets/restructure-favicon-pack.zip" download>Favicon pack<span>ZIP</span></a></li>
+<li><a href="/favicon.ico" download>favicon.ico (16, 32, 48)<span>ICO</span></a></li>
+<li><a href="/favicon.svg" download>Favicon (SVG)<span>SVG</span></a></li>
+<li><a href="/favicon-16x16.png" download>Favicon 16x16<span>PNG</span></a></li>
+<li><a href="/favicon-32x32.png" download>Favicon 32x32<span>PNG</span></a></li>
+<li><a href="/apple-touch-icon.png" download>Apple touch icon 180x180<span>PNG</span></a></li>
+<li><a href="/android-chrome-192x192.png" download>Android icon 192x192<span>PNG</span></a></li>
+<li><a href="/android-chrome-512x512.png" download>Android icon 512x512<span>PNG</span></a></li></ul>
+<h3>Company</h3><p class="b"><a href="https://re-structure.ai">re-structure.ai</a></p></div></section>
+<footer><div class="wrap"><span>ReStructure AI</span><span>brandkit.restructure.cloud</span></div></footer>
+</body></html>
