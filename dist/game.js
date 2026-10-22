@@ -49,13 +49,18 @@ const W=214, H=16, D=9, Z0=-4; // z in [-4..4]
 const solids=new Map();      // "x,y,z" -> type
 const blocksByType={};       // type -> [ [x,y,z], ... ]
 const qBlocks=new Map();     // key -> {mesh instance idx, state}
+const SPREAD={hard:[-4,4],brick:[-1,1],q:[-1,1],pipe:[-1,1],pipeTop:[-1,1],castle:[-2,2],castleDark:[-1,1]};
 function put(type,x,y,z=0){
+  if(z===0&&SPREAD[type]){const[a,b]=SPREAD[type];for(let zz=a;zz<=b;zz++)put1(type,x,y,zz);return;}
+  put1(type,x,y,z);
+}
+function put1(type,x,y,z){
   const k=x+','+y+','+z;
   solids.set(k,type);
   (blocksByType[type]??=[]).push([x,y,z]);
 }
 function fillX(type,x1,x2,y1,y2){for(let x=x1;x<=x2;x++)for(let y=y1;y<=y2;y++)put(type,x,y);}
-function ground(x1,x2){for(let x=x1;x<=x2;x++)for(const z of [-1,0,1]){put('ground',x,0,z);put('ground',x,1,z);}}
+function ground(x1,x2){for(let x=x1;x<=x2;x++)for(let z=-4;z<=4;z++){put1('ground',x,0,z);put1('ground',x,1,z);}}
 function pipe(x,h){for(let y=2;y<2+h;y++){put(y===1+h?'pipeTop':'pipe',x,y);put(y===1+h?'pipeTop':'pipe',x+1,y);}}
 function stair(x,h,dir){for(let i=0;i<h;i++)for(let y=2;y<=2+i;y++)put('hard',x+dir*i,y);}
 
@@ -111,7 +116,7 @@ for(const [x,y,z] of (blocksByType.q||[])){
 function blob(mat,cx,cy,cz,cells){const g=new THREE.Group();cells.forEach(([x,y,z,s=1])=>{const m=new THREE.Mesh(box,mat);m.scale.set(s,s,s);m.position.set(x,y,z);g.add(m);});g.position.set(cx,cy,cz);scene.add(g);}
 for(let i=0;i<14;i++){const cx=8+i*15.3%200, cy=11+(i*7)%4, cz=-9+((i*13)%3);
   blob(mats.cloud,cx,cy,cz,[[0,0,0,1],[1,0,0,1],[2,0,0,1],[.5,.8,0,1],[1.5,.8,0,1]]);}
-for(let i=0;i<12;i++){const bx=6+i*17.7%205; blob(mats.bush,bx,2.1,-4.9,[[0,0,0,1],[1,0,0,1],[.5,.7,0,1]]);}
+for(let i=0;i<12;i++){const bx=6+i*17.7%205; blob(mats.bush,bx,2.1,-9,[[0,0,0,1],[1,0,0,1],[.5,.7,0,1]]);}
 for(const [hx,hr,hh] of [[20,14,16],[70,18,22],[120,14,17],[170,16,20]]){
   const cone=new THREE.Mesh(new THREE.ConeGeometry(hr,hh,4),new THREE.MeshLambertMaterial({color:0x0a9a2a}));
   cone.position.set(hx,hh/2,-46);cone.rotation.y=Math.PI/4;scene.add(cone);
@@ -339,7 +344,7 @@ function stepPlayer(dt){
     if(jumpBuf>0&&(P.onGround||coyote>0)){P.vy=9.6;P.onGround=false;coyote=0;jumpBuf=0;sfx.jump();}
     P.onGround=false;
     moveAxis(P.vx*dt,0,0); moveAxis(0,P.vy*dt,0); moveAxis(0,0,P.vz*dt);
-    P.z=Math.max(ZC-2.4,Math.min(ZC+2.4,P.z));
+    P.z=Math.max(ZC-4.15,Math.min(ZC+4.15,P.z));
     if(P.y<-10)killPlayer();
     // target fov & roll
     const wantFov=75+(sprint>1&&(ix||iz)?9:0);
