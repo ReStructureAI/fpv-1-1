@@ -208,6 +208,22 @@ addEventListener('touchend',e=>{for(const t of e.changedTouches){
 document.getElementById('btnJump').addEventListener('touchstart',e=>{e.preventDefault();touch.jump=true;},{passive:false});
 document.getElementById('btnMode').addEventListener('touchstart',e=>{e.preventDefault();if(playing)toggleMode();},{passive:false});
 
+function resetInput(){for(const k in keys)keys[k]=false;touch.jx=touch.jy=0;touch.jump=false;stickId=null;lookId=null;nub.style.left='38px';nub.style.top='38px';}
+addEventListener('blur',resetInput);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)resetInput();});
+addEventListener('touchcancel',resetInput,{passive:true});
+const hintEl=document.createElement('div');
+hintEl.style.cssText='position:fixed;left:50%;top:22%;transform:translateX(-50%);z-index:25;background:#f5efe0;color:#1a1a1a;font:700 15px Figtree,sans-serif;padding:10px 18px;border-radius:999px;box-shadow:0 4px 18px rgba(0,0,0,.25);display:none;pointer-events:none;text-align:center';
+document.body.appendChild(hintEl);
+let hintUntil=0,hintSticky=false;
+function showHint(t,ms,sticky){hintEl.textContent=t;hintEl.style.display='block';hintUntil=performance.now()+ms;hintSticky=!!sticky;}
+function hideHint(){hintEl.style.display='none';hintSticky=false;}
+function anyInput(){for(const k in keys)if(keys[k]&&!/Shift|Control/.test(k))return true;return Math.abs(touch.jx)>.15||Math.abs(touch.jy)>.15||touch.jump;}
+function evadeHint(){
+  if(mode!=='run')return;
+  for(const g of grumblers){if(!g.alive)continue;const d=g.x-P.x;
+    if(Math.abs(d)<7&&Math.abs(P.y-g.y)<2){showHint(isTouch?'Grumbler ahead! Jump over it (or stomp it)':'Grumbler ahead! Press Space to jump over it (or stomp it)',600);return;}}
+}
 // ---------- player & state ----------
 const ZC=Z0+.5, SPAWN={x:3.5,y:2.05}, MID={x:105.5,y:2.05};
 const P={x:SPAWN.x,y:SPAWN.y,z:ZC,vx:0,vy:0,vz:0,hw:.32,h:1.7,onGround:false,roll:0,fov:75};
@@ -284,7 +300,7 @@ function resetWorld(){
 }
 function startGame(m){
   ac().resume?.();
-  mode=m;state='play';playing=true;
+  mode=m;state='ready';playing=true;resetInput();showHint('Press W / move stick to start',99999,true);
   document.getElementById('titleOv').classList.add('hide');
   document.getElementById('endOv').classList.add('hide');
   document.getElementById('hud').style.display='flex';
@@ -415,7 +431,8 @@ const clock=new THREE.Clock();
 function loop(){
   requestAnimationFrame(loop);
   const dt=Math.min(clock.getDelta(),.05), t=clock.elapsedTime;
-  if(state==='play'){stepPlayer(dt);stepGrumblers(dt);}
+  if(state==='ready'){yaw-=lookDX*.0024;pitch=Math.max(-1.45,Math.min(1.45,pitch-lookDY*.0024));lookDX=lookDY=0;if(anyInput()){state='play';hideHint();}}
+  else if(state==='play'){stepPlayer(dt);stepGrumblers(dt);evadeHint();if(!hintSticky&&hintEl.style.display==='block'&&performance.now()>hintUntil)hideHint();}
   else if(state==='dying'){dieT+=dt;P.vy-=26*dt;P.y+=P.vy*dt;if(dieT>1.3)respawn();}
   else if(state==='won'){
     winT+=dt;
@@ -424,7 +441,7 @@ function loop(){
     else {showEnd(true);state='done';}
   }
   stepCoins(t);stepQBlocks(dt);
-  if(playing||state==='dying'||state==='won')updateHUD();
+  if(playing||state==='ready'||state==='dying'||state==='won')updateHUD();
   camera.position.set(P.x,P.y+(mode==='run'?1.55:0),P.z);
   camera.rotation.order='YXZ';camera.rotation.y=yaw;camera.rotation.x=pitch;camera.rotation.z=P.roll;
   if(Math.abs(camera.fov-P.fov)>.1){camera.fov=P.fov;camera.updateProjectionMatrix();}
